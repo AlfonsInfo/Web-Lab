@@ -16,10 +16,38 @@
                     <h1>WPU Movie DB</h1>
                 </div>
             </div>
-            <!-- //4 colom -->
-            <div class="content row">
-
+            <div class="row mt-5">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control input-keyword" placeholder="Cari Film Apa ?" aria-label="Search" aria-describedby="basic-addon2", data-namafilm="">
+                        <div class="input-group-append">
+                        <button class="btn btn-outline-secondary search-button" type="button">Search</button>
+                        </div>
+                    </div>                
+                </div>
             </div>
+            <!-- //Harusnya 4 colom -->
+            <!-- Container 4 Movie -->
+            <div class="row movie-container"></div>
+      <!-- Modal -->
+        <div class="modal fade" id="DetailModal" tabindex="-1" role="dialog" aria-labelledby="DetailModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="DetailModalModalLabel">Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body modalDetailsContent">
+                   
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
