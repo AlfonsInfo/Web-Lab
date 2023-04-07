@@ -55,7 +55,7 @@ function updateUI(Movies){
 function updateUIDetail(m)
 {
     const movieDetail = generateModalContent(m)
-    console.log(movieDetail)
+    // setTimeout(function(){console.log(movieDetail)},1000)
     const modalBody = document.querySelector('.modal-body');
     modalBody.innerHTML = movieDetail
 }
