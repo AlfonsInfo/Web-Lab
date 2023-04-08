@@ -2,9 +2,15 @@
 tampilUI()
 const searchButton = document.querySelector('.search-button') //* modalDetailButton tidak bisa kayak gini, soalnya saat pertama kali program dijalankan box-boxnya belum tentu ada
 searchButton.addEventListener('click',function(){
-    const inputKeyword = document.querySelector('.input-keyword').value 
-    updateUI(inputKeyword)
-})
+    try{
+        const inputKeyword = document.querySelector('.input-keyword').value 
+        tampilUI(inputKeyword)
+    }catch
+    {
+        console.log(err)
+        alert('Film tidak ditemukan')
+    }
+});
 
 //* event binding
 //* thisnya selalu document
@@ -22,10 +28,22 @@ document.addEventListener('click',async function(e){
 })
 
 function getMovies(keyword){
-    // console.log('getmovie',keyword)
+    console.log('getmovie',keyword)
     return fetch('http://www.omdbapi.com/?apikey=3865e600&s=' + keyword)
-    .then(response => response.json(), ) //* Masih Promise oelh karena itu butuh then 1x lagi
-    .then(response => response.Search 
+    .then(response => {
+        if(!response.ok){
+            throw new Error(response.statusText);
+        }
+        return response.json()
+    }, ) //* Masih Promise oelh karena itu butuh then 1x lagi
+    .then(response =>{ 
+        console.log(response)
+        if (response.Response === 'False')
+        {
+            throw new Error(response.Error);
+            }
+        return  response.Search  
+    }//* kosong,tidak ketemu 
     )
 
 }
@@ -39,16 +57,27 @@ function getMovieDetail(imdbid){
 
 async function tampilUI(inputKeyword = 'Avengers')
 {
-    console.log(inputKeyword)
+    try{
+        const Movies = await getMovies(inputKeyword);
+        updateUI(Movies);
+    }catch(err){
+        console.log(err)
+        alert(err)
+    }
     // const Movies0 =  getMovies(inputKeyword); //* tanpa await hasilnya masih promise (proses)
-    const Movies = await getMovies(inputKeyword);
-    updateUI(Movies);
 }
 
 
 function updateUI(Movies){
-    const movieContainer = document.querySelector('.movie-container');
-    Movies.forEach(m =>  createCards(movieContainer,m));
+    // try{
+        const movieContainer = document.querySelector('.movie-container');
+        movieContainer.innerHTML = "";
+        Movies.forEach(m =>  createCards(movieContainer,m));
+    // }catch(err)
+    // {
+        // console.log(err)
+        // alert(err.message)
+    // }   
 }
 
 
