@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .box{
+            padding: 100px 0;
+            width : 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+
+        .fav{
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-if=showBooks>
+            <ul>
+                <!-- fav is book.isFav ?  -->
+                <li v-for="book in books" @click = "toggleFav(book)">
+                <!-- CARA 1  -->
+                <!-- <li v-for="book in books" :class = "{ fav : book.isFav}"> -->
+                    <!-- CARA 2 -->
+                <!-- <li v-for="book in books" :class = "checkFav(book)"> -->
+                    <!-- BANDINGKAN SENDIRI !! -->
+                    <div class="box" :class="{fav : book.isFav}" >
+                        <img :src="book.img" :alt="book.title">
+                        <h3>{{book.title}}</h3>
+                        <p>{{book.author}}</p>
+                        <p>{{book.isFav}}</p>
+                    </div>
+                    <!-- <img :src="book.img" alt="{{book.title}}"> -->
+                </li>
+            </ul>
+        </div>
+        <h1>Filtered Book</h1>
+
+        <li v-for="book in filteredBooks" @click = "toggleFav(book)">
+            <!-- CARA 1  -->
+            <!-- <li v-for="book in books" :class = "{ fav : book.isFav}"> -->
+                <!-- CARA 2 -->
+            <!-- <li v-for="book in books" :class = "checkFav(book)"> -->
+                <!-- BANDINGKAN SENDIRI !! -->
+                <div class="box" :class="{fav : book.isFav}" >
+                    <img :src="book.img" :alt="book.title">
+                    <h3>{{book.title}}</h3>
+                    <p>{{book.author}}</p>
+                    <p>{{book.isFav}}</p>
+                </div>
+                <!-- <img :src="book.img" alt="{{book.title}}"> -->
+            </li>
+        <!-- Cara 1 -->
+        <button @click ="toggleShowBooks">{{buttonText()}}</button>
+        <div v-show="showBooks"></div>
+
+        <br>
+
+        <div class="box" @mouseover="handleEvent">mouseover (enter)</div>
+        <div class="box" @mouseleave="handleEvent">mouseleave </div>
+        <div class="box" @dblclick="handleEvent($event, 5)">dblclick </div>
+        
+    </div>
+
+    <script  src="app.js"></script>
+</body>
+</html>
+
+
+

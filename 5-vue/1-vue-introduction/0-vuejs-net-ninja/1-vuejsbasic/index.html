@@ -32,7 +32,14 @@
                 {{title}} - {{author}}- {{age}}
             </p>
         </div>
+        <!-- Cara 1 -->
         <button @click ="toggleShowBooks">{{buttonText()}}</button>
+        <!-- Cara 2 -->
+        <button @click ="toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>
+            <span v-else>Show Books</span>
+        </button>
+        <div v-show="showBooks"></div>
     </div>
     <!--<div>
         <p>diluar div app tidak akan bekerja</p>
