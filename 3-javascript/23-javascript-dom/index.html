@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="dom.js"></script>
+</head>
+<body>
+    <h1>Document Object Model</h1>
+    <p>DOM adalah antarmuka pemrograman untuk HTML yang merepresentasikan halaman web, sehingga program dapat mengubah
+        memanipulasi strukturnya
+    </p>
+    <p>isi dari website merupakan bagian yang disebut dengan document</p>
+    <p>Pada javascript terdapat yang namanya DOM Tree sesuai hirarki tag</p>
+    <h2>window</h2>
+    <ol>
+        <li>document</li>
+        <li>history</li>
+        <li>location</li>
+    </ol>
+    <h2>DOM</h2>
+    <ol>
+        <li>Antarmuka pemrograman web berbasis objek yang merepresentasikan dokumen web</li>
+        <li>DOM membuat seluruh komponen halaman web dapat diakses & manipulasi</li>
+        <li>komponen
+            <ol>
+                <li>Elemen HTML</li>
+                <li>Atribut</li>
+                <li>Text</li>
+                <li>dll</li>
+            </ol>
+        </li>
+        <li>DOM dapat dimanpulasi dibuat dubah dihapus menggunakan javascript</li>
+    </ol>
+    <h2>Tipe-tipe node</h2>
+    <ol>
+        <li>Eelement</li>
+        <li>Atribut</li>
+        <li>Text</li>
+        <li>CData Section</li>
+        <li>Entity Reference</li>
+        <li>Entity</li>
+        <li>Processing Instructio</li>
+        <li>Comment</li>
+        <li>Document</li>
+        <li>Document Type</li>
+        <li>Document Fragment</li>
+        <li>Document Notation</li>
+    </ol>
+    <h2>NodeList vs HTMLCollection</h2>
+    <dl>
+        <dt>NodeList</dt>
+        <df>kumpulan node direpresentasikan mirip dengan array , bisa berisi node apapun</df>
+        <dt>HTMLCollection</dt>
+        <df>khusus elemen HTML</df>
+        <df>bersifat live nodelist tidak</df>
+    </dl>
+    <h2>Hirarki</h2>
+    <dl>
+        <dt>Root Node</dt>
+        <df>
+            <ol>
+                <li>Node yang menjaid sumber dari semua node lain didalam DOM</li>
+                <li>document</li>
+            </ol>
+        </df>
+        <dt>Parent Node</dt>
+        <df>
+            <ol>
+                <li>node yang berada 1 tingkat diatas node lain</li>
+            </ol>
+        </df>
+        <dt>child Node</dt>
+    </dl>
+    <ol>
+        <li>DOM Selection</li>
+        <li>DOM Manipulation</li>
+        <li>DOM Events</li>
+        <li>DOM Prevent Devfault</li>
+        <li>Event Bubbling</li>
+    </ol>
+    <h2>DOM Selection Method</h2>
+    <ol>
+        <li>getElementById()</li>
+        <li>getElementsByTagName</li>
+        <li>getElementsByClassName()</li>
+        <li>querySelector()</li>
+        <li>querySelectorAll()</li>
+    </ol>
+</body>
+</html>
