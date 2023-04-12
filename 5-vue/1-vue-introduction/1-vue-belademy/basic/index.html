@@ -9,8 +9,17 @@
 <body>
     <h1>Vue Belademy</h1>
     <div id="app">
-        <h3>{{human.nama}}</h3>
+        <h3>{{'Nama : '  + human.nama.toUpperCase()}}</h3>
         <h3>{{nama}}</h3>
+        <p>{{2*3}}</p>
+        <p>{{isTrue ?  'mantep' : 'ga mantep'}}</p>
+        <p>---------------------------</p>
+        <p>{{getName()}}</p>
+        <p>{{ubahNama('momok')}}</p>
+        <!-- <p>{{totalBayar(2)}}</p> -->
+        <p v-for="element in filteredArray">{{element}}</p>
+        <p>{{filteredArray}}</p>
+        <p>{{totalBayar}}</p>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="app.js"></script>
