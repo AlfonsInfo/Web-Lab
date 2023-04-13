@@ -18,14 +18,24 @@
         <p>Text Input : {{inputText}}</p>
         <input type="text" v-model="inputText">
         <p>Kelas yang tersedia : {{kelas}}</p>
-        <div v-for="k in kelas">
-                <label >{{k}}</label>
+        <div v-for="(k,i) in kelas">
+                <label >{{ i + '. '+k }}</label>
                 <input type="checkbox" :value="k" v-model="ambilKelas">
             </div>
         <p>Kelas yang diambil : {{ambilKelas}}</p>
+        <template v-for="(value, name ,index) in object">
+            <p>
+                {{value}} - {{name}} - {{index}}
+
+            </p>
+        </template>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
 
+<!-- v-bind ? -->
+<!-- Pada vue bisa menggunakan syntaks template -->
+
+<!--  v-for {{value,name,index}} -->

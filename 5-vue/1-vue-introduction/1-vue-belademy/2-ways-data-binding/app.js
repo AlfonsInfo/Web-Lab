@@ -13,7 +13,17 @@ const app =  Vue.createApp({
             inputText : '',
             // kelas : '' //* ngambil data true /falseny (isi/kosong)
             kelas : ['python','golang','dart','kotlin','React','Vue','NodeJs','Laravel'],
-            ambilKelas : []
+            ambilKelas : [],
+            items : [
+                {message : 'footbar'},
+                {message : 'yoo'},
+                {message : 'man'}
+            ],
+            object : {
+                name : 'How to do list in vue',
+                author : 'Jane Doe',
+                publishedAt : '2016-04-20'
+            }
         };
     },
 
