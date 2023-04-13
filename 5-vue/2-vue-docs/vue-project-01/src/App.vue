@@ -1,8 +1,8 @@
-<script >
+<script setup>
 import { defineComponent} from 'vue'
 import data from '../../vue-project-01/src/script'
 const dataLagi= data;
-export default defineComponent({
+defineComponent({
   data(){
     return {
         dataLagi
