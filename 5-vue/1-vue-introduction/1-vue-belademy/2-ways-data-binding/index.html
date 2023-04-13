@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- Sepertinya tidak bisa menggunakan 1 way data binding -->
+        <h1 v-text="title"></h1>
+        <h2>1 Way data binding</h2>
+        <p>Text Input : {{inputText}}</p>
+        <input type="text" name="Data">
+        <button type="submit" @click="reRender(data)">Submit Data</button>
+        <h2>2 Way data binding</h2>
+        <p>Text Input : {{inputText}}</p>
+        <input type="text" v-model="inputText">
+        <div>
+            <p v-for="k in kelas">{{k}}</p>
+        </div>
+        <div>
+            <div>
+                <label>React</label>
+                <input type="checkbox" value="React" v-model="kelas">
+            </div>
+            <div>
+                <label>Angular</label>
+                <input type="checkbox" value="Angular" v-model="kelas">
+            </div>
+            <div>
+                <label>VueJs</label>
+                <input type="checkbox" value="Vue" v-model="kelas">
+            </div>
+        </div>
+        <p>{{kelas}}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
