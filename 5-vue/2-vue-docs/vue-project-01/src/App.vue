@@ -1,15 +1,10 @@
 <script setup>
 import { defineComponent} from 'vue'
 import data from '../../vue-project-01/src/script'
-const dataLagi= data;
-defineComponent({
-  data(){
-    return {
-        dataLagi
-      // nama : 'Alfons'
-    }
-  }
-})
+const dataLagi= {
+  'nama' : 'Alfons'
+}
+
 // import HelloWorld from './components/HelloWorld.vue'
 // import TheWelcome from './components/TheWelcome.vue'
 </script>
@@ -21,7 +16,7 @@ defineComponent({
 
   <main>
     <!-- <h1>{{Data }}</h1> -->
-    <h1>{{ dataLagi.nama }}</h1>
+    <h1>{{ dataLagi.nama}}</h1>
   </main>
 </template>
 
