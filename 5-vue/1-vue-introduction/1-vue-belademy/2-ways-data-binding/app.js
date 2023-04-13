@@ -12,7 +12,7 @@ const app =  Vue.createApp({
             title : 'Two Way Data Binding',
             inputText : '',
             // kelas : '' //* ngambil data true /falseny (isi/kosong)
-            kelas : ['python','golang','dart','kotlin'],
+            kelas : ['python','golang','dart','kotlin','React','Vue','NodeJs','Laravel'],
             ambilKelas : []
         };
     },
