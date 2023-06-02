@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1, .box2{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            padding: 5px;
+            color: white;
+        }
+        .box3{
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            padding: 5px;
+            margin: 10px 0;
+            color: white;
+            font-style: italic;
+        }
+
+        .box3 > p{
+            /* overwrite style ancestors */
+            color: black;
+            font-style: normal;
+            font-weight: bold;
+        }
+        .box3.condition  p{
+            /* overwrite style ancestors */
+            color: black;
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        /* direct child dari body dan tipe p dengan class custom-paragraph */
+        .body > p.custom-paragraph {
+            font-style: italic!important;
+        }
+    </style>
+</head>
+<body class="body">
+    <h1>Combining Selector</h1>
+    <h2>Konsep : </h2>
+    <p>Ada beberapa metode mengkombinasikan selector</p>
+    <ol>
+        <li>Group (,) Apply to both selector (aplikasikan style terhadap >= 2 elemen yang di seleksi)</li>
+        <li>Child (>) Apply style to child (one gen) terapkan style ke anakan elemen </li>
+        <li>Descendant( (spasi)) (Apply pada turunan)</li>
+        <li>Chaining(selectorselector) (Apply ketika semua syarat seleksi true)</li>
+    </ol>
+    <h2>Contoh : </h2>
+    <h3>Contoh untuk nomor 1</h3>
+    <div class="box1">Box 1</div>
+    <div class="box2">Box 2</div>
+    <h3>Contoh untuk nomor 2</h3>
+    <div class="box3">
+        <p>Style box 3 sama dengan box2 tp dioverwrite</p>
+    </div>
+    <h3>Contoh untuk nomor 3 dan 4 ( box paling bawah menggunakan chaining juga)</h3>
+    <div class="box3">
+        <div>
+            <p>descendant lebih dar 1 gen tidak berlaku menggunakan ></p>
+        </div>
+    </div>
+    <div class="box3 condition">
+        <div>
+            <div>
+                <p class="custom-paragraph">Test</p>
+            </div>
+        </div>
+    </div>
+    <p class="custom-paragraph">Contoh Khusus No 4</p>
+
+    <a href="../index.html">Balik Ngab</a>
+</body>
+</html>

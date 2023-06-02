@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ol{
+            background-color: coral;
+        }
+        
+        li{
+            background-color: darkgray;
+        }
+
+        .index0{
+            /* important > inline */
+            background-color: green !important;  
+            color: yellow;
+        }
+
+        /*karena lebih spesifik, style dibawha jika di on kan akan menimpa style lain */
+        /* #list{
+            background-color: turquoise;
+        } */
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Selector (Selektor)</h1>
+        <p>Ada beberapa jenis selektor : </p>
+        <ol id="list">
+            <li class="index0" style="background-color: red;">element selector</li>
+            <li>class selector</li>
+            <li>attribute selector</li>
+            <li>id selector (paling spesifik karena 1 file html hanya bisa 1 id)</li>
+        </ol>
+    </div>
+    <a href="../index.html">Balik</a>
+</body>
+</html>
