@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS PLayground</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="content">
+        <h1>CSS PlayGround</h1>
+        <ol>
+            <li><a href="./2-html-css/1 css selector/selector.html">CSS Selectors</a></li>
+            <li><a href="./2-html-css/2 css combining selector/combining-selector.html">CSS Combining Selectors</a></li>
+            <li><a href="https://appbrewery.github.io/css-inspection/">CSS Inspecting Quiz</a></li>
+            <li><a href="./2-html-css/3 css box model/index.html">CSS Box Model</a></li>
+            <li><a href="">CSS Specificity & Inheritance</a></li>
+            <li><a href="">CSS Positioning</a></li>
+            <li><a href="">CSS Display</a></li>
+            <li><a href="">CSS Float</a></li>
+        </ol>
+        <div class="toggle">
+            <div>
+                <button id="disableCSS">Disable CSS</button>
+                <button id="enableCSS">Enable CSS</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const disableCSSButton = document.getElementById('disableCSS');
+        const enableCSSButton = document.getElementById('enableCSS');
+
+        disableCSSButton.addEventListener('click', function() {
+        disableCSS();
+        });
+
+        enableCSSButton.addEventListener('click', function() {
+        enableCSS();
+        });
+
+        function disableCSS() {
+        const links = document.querySelectorAll('link[rel="stylesheet"]');
+        for (let i = 0; i < links.length; i++) {
+            links[i].disabled = true;
+        }
+        }
+
+        function enableCSS() {
+        const links = document.querySelectorAll('link[rel="stylesheet"]');
+        for (let i = 0; i < links.length; i++) {
+            links[i].disabled = false;
+        }
+        }
+    </script>
+</body>
+</html>
